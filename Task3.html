@@ -55,14 +55,17 @@
         const todoList = [];
         
         // BE ABLE TO EXPLAIN what document.getByElementID() and .addEventListener() does in this context
-        document.getElementById('add-todo-btn').addEventListener('click', () => {
+        document.getElementById('add-todo-btn').addEventListener('click', () => { //get element by id means "to this button" i want to do "xyz" in which xyz is add event listen in which the program waits for the button to be clicked
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
-            const todoInput = document.getElementById('todo-input');
+            const todoInput = document.getElementById('todo-input'); //retrieves the todoinput string /////and puts it into the constant todoinput
             const createdTodo = todoInput.value.trim();
             
             // Add non-empty string todos to the todo list
             // YOUR CODE HERE 
+            if (createdTodo !== "") {
+                addTodo(createdTodo)
+            }
 
             // reset the input value after add todo is clicked.
             todoInput.value = '';
@@ -72,7 +75,7 @@
         function refreshTodoList() {
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
-            const todoListElement = document.getElementById('todo-list');
+            const todoListElement = document.getElementById('todo-list'); //grabs the todo-list id to use to store it into the todoListElement
             todoListElement.innerHTML = '';
 
             todoList.forEach((todo, index) => {
@@ -90,11 +93,13 @@
 
         function deleteTodo(index) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.splice(index, 1)
             refreshTodoList()
         }
 
         function addTodo(todo) {
             // YOUR CODE HERE (recycle your work from former tasks)
+            todoList.push(todo)
             refreshTodoList()
         }
     </script>
