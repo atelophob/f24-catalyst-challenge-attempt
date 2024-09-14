@@ -55,10 +55,10 @@
         const todoList = [];
         
         // BE ABLE TO EXPLAIN what document.getByElementID() and .addEventListener() does in this context
-        document.getElementById('add-todo-btn').addEventListener('click', () => { //get element by id means "to this button" i want to do "xyz" in which xyz is add event listen in which the program waits for the button to be clicked
+        document.getElementById('add-todo-btn').addEventListener('click', () => { 
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
-            const todoInput = document.getElementById('todo-input'); //retrieves the todoinput string /////and puts it into the constant todoinput
+            const todoInput = document.getElementById('todo-input'); 
             const createdTodo = todoInput.value.trim();
             
             // Add non-empty string todos to the todo list
@@ -75,7 +75,7 @@
         function refreshTodoList() {
             
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
-            const todoListElement = document.getElementById('todo-list'); //grabs the todo-list id to use to store it into the todoListElement
+            const todoListElement = document.getElementById('todo-list'); 
             todoListElement.innerHTML = '';
 
             todoList.forEach((todo, index) => {
